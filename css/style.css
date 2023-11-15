@@ -13,22 +13,30 @@
 
 #logo {
     position: absolute;
-    width: 175px;
+    width: 20%;
     aspect-ratio: 902/973;
     left: 10px;
     top: 10px;
 }
 
+#coffee-title {
+    font-size: 3.5em;
+}
+
 .coffee-form {
     background-color: #d2b48c;
     position: absolute;
-    top: 25%;
-    right: 25%;
-    border: 1px solid black;
+    top: 30%;
+    right: 30%;
+    border: 5px solid chocolate;
     visibility: hidden;
     min-height: 300px;
     border-radius: 15px;
     text-align: center;
+}
+
+.coffee-item {
+    font-size: 24px;
 }
 
 .active {
@@ -38,7 +46,7 @@
     position: fixed;
     right: 20px;
     top: 10px;
-
+    font-size: 24px;
 }
 
 .coffee-header {
@@ -46,17 +54,22 @@
 }
 
 header p {
-    font-size: 30px;
+    font-size: 40px;
 }
 #coffee-body{
     min-height: 100dvh;
     padding: 0 25%;
 }
+.btn-primary {
+    background-color: chocolate;
+}
+
 .btn-secondary{
     background-color: chocolate;
     padding:0 10px;
     height: 30px;
     border-radius: 10px;
+    font-size: 18px;
 }
 #cup {
     width: 50px;

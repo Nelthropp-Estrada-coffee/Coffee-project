@@ -23,7 +23,7 @@ const updateCoffees = (coffees) => {
 
 const createCoffeeElement = coffee => {
 	let coffeeItem = document.createElement('div');
-	coffeeItem.classList.add("d-flex", "flex-row", "col-12");
+	coffeeItem.classList.add("d-flex", "flex-row", "col-12", "coffee-item");
 	coffeeItem.innerHTML = `
    		<p class="col-6">${coffee.name}</p>
 		<p class="col-6">${coffee.roast}</p>
