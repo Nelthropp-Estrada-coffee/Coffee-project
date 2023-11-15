@@ -75,8 +75,29 @@ const handleFilter = (coffees) => {
 	});
 }
 
+const addCoffee = (coffees) => {
+	const coffeeBody = document.querySelector('#coffee-body');
+	const submitCoffee = document.querySelector('.coffee-form button');
+	const cName = document.querySelector('#coffeename-input');
+	const cRoast = document.querySelector('#coffeeroast-input');
+	submitCoffee.addEventListener('click', e => {
+		e.preventDefault();
+		let coffeeItem = document.createElement('div');
+		coffeeItem.classList.add("d-flex", "flex-row", "col-12");
+		coffeeItem.innerHTML = `
+   		<p class="col-6">${cName.value}</p>
+		<p class="col-6">${cRoast.value}</p>
+    		`;
+		let cObject = {id: 16, name: cName.value, roast: cRoast.value};
+		coffees.push(cObject);
+		coffeeBody.appendChild(coffeeItem);
+	});
+	updateCoffees(coffees);
+}
+
 // IIFE
 (() => {
 	updateCoffees(coffees);
 	handleFilter(coffees);
+	addCoffee(coffees);
 })();
