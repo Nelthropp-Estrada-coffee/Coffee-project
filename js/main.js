@@ -34,13 +34,18 @@ const renderCoffees = (coffees) => {
 		coffeeBody.appendChild(coffeeElement);
 	}
 };
+const filterCoffee = coffees => {
+	let coffeeResult = coffees;
+	let selectedRoast = document.querySelector(`#roast-selection`).value;
+	coffeeResult = coffeeResult.filter(coffee=>{
+		return coffee.roast.includes(selectedRoast)
+	})
+}
 
-// const updateCoffees = (e, target, selection) => {
-// 	e.preventDefault();
-// 	const selectedRoast = selection.value;
-// 	const filteredCoffees = coffees.filter((coffee) => coffee.roast === selectedRoast);
-// 	renderCoffees(filteredCoffees, target);
-// };
+const updateCoffees = () => {
+	filterCoffee(coffees);
+	renderCoffees(coffees);
+};
 
 // IIFE
 (() => {
@@ -48,7 +53,7 @@ const renderCoffees = (coffees) => {
 	// const submitButton = document.querySelector("#submit");
 	// const roastSelection = document.querySelector("#roast-selection");
 	// renderCoffees(coffees, tbody, roastSelection);
-	renderCoffees(coffees);
+updateCoffees();
 
 	// submitButton.addEventListener("click", (e) => {
 	// 	updateCoffees(e, tbody, roastSelection);
