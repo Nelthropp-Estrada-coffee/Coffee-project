@@ -11,13 +11,15 @@
     <nav class="container">
         <div class="row">
             <h1>Coffee!</h1>
-            <div class="col d-flex flex-row">
-                <select id="roast-selection" class="col-3">
-                    <option value="all" selected>all</option>
-                    <option value="light">light</option>
-                    <option value="medium">medium</option>
-                    <option value="dark">dark</option>
-                </select>
+            <div class="col d-flex flex-row gap-2">
+                <input type="radio" class="btn-check" name="roast" id="all" autocomplete="off">
+                <label class="btn btn-secondary" for="all">All</label>
+                <input type="radio" class="btn-check" name="roast" id="light" autocomplete="off">
+                <label class="btn btn-secondary" for="light">light</label>
+                <input type="radio" class="btn-check" name="roast" id="medium" autocomplete="off">
+                <label class="btn btn-secondary" for="medium">medium"</label>
+                <input type="radio" class="btn-check" name="roast" id="dark" autocomplete="off">
+                <label class="btn btn-secondary" for="dark">Dark</label>
                 <div class="input-group input-group-md col-3">
                     <input id="search" type="search" placeholder="Search coffees...">
                 </div>
