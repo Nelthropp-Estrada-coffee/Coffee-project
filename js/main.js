@@ -34,13 +34,22 @@ const createCoffeeElement = coffee => {
 const filterCoffee = coffees => {
 	let coffeeResult = coffees;
 	let selectedRoast = document.querySelector(`#roast-selection`);
+	const searchInput = document.querySelector('#search');
+	const searchValue = searchInput.value;
 	coffeeResult = coffeeResult.filter(coffee=>{
 		if (selectedRoast.value === "all") {
-			return coffees;
+			return true;
 		} else {
-			return coffee.roast.includes(selectedRoast.value);
+			return coffee.roast.toLowerCase().includes(selectedRoast.value.toLowerCase());
 		}
-	})
+	});
+	coffeeResult = coffeeResult.filter(coffee=>{
+		if(!searchValue) {
+			return true;
+		}
+		return coffee.name.toLowerCase().includes(searchValue.toLowerCase());
+	});
+	coffeeResult.sort((a, b) => a.id - b.id);
 	return coffeeResult;
 }
 
@@ -55,9 +64,14 @@ const renderCoffees = (coffees) => {
 const handleFilter = (coffees) => {
 	let coffeeBody = document.querySelector('#coffee-body');
 	let selectedRoast = document.querySelector(`#roast-selection`);
+	const searchInput = document.querySelector('#search');
 	selectedRoast.addEventListener('change', e=> {
 		coffeeBody.innerHTML = "";
-		updateCoffees(coffees)
+		updateCoffees(coffees);
+	});
+	searchInput.addEventListener('input', e=> {
+		coffeeBody.innerHTML = "";
+		updateCoffees(coffees);
 	});
 }
 

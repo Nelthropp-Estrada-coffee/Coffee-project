@@ -10,14 +10,17 @@
 <div class="page-wrapper">
     <nav class="container">
         <div class="row">
-            <div class="col">
-                <h1>Coffee!</h1>
-                <select id="roast-selection">
+            <h1>Coffee!</h1>
+            <div class="col d-flex flex-row">
+                <select id="roast-selection" class="col-3">
                     <option value="all" selected>all</option>
                     <option value="light">light</option>
                     <option value="medium">medium</option>
                     <option value="dark">dark</option>
                 </select>
+                <div class="input-group input-group-md col-3">
+                    <input id="search" type="search" placeholder="Search coffees...">
+                </div>
             </div>
         </div>
     </nav>
