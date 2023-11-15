@@ -32,6 +32,12 @@
 }
 .btn-secondary{
     background-color: chocolate;
-    padding:0 15px;
-
+    padding:0 10px;
+    height: 30px;
 }
+#cup{
+ width: 50px;
+    height: 50px;
+}
+
+
