@@ -16,16 +16,33 @@ const coffees = [
 	{ id: 14, name: "French", roast: "dark" },
 ];
 
+const updateCoffees = (coffees) => {
+	let displayCoffee = filterCoffee(coffees);
+	renderCoffees(displayCoffee);
+};
+
 const createCoffeeElement = coffee => {
 	let coffeeItem = document.createElement('div');
 	coffeeItem.classList.add("d-flex", "flex-row", "col-12");
-
 	coffeeItem.innerHTML = `
    		<p class="col-6">${coffee.name}</p>
 		<p class="col-6">${coffee.roast}</p>
     `;
 	return coffeeItem;
 };
+
+const filterCoffee = coffees => {
+	let coffeeResult = coffees;
+	let selectedRoast = document.querySelector(`#roast-selection`);
+	coffeeResult = coffeeResult.filter(coffee=>{
+		if (selectedRoast.value === "all") {
+			return coffees;
+		} else {
+			return coffee.roast.includes(selectedRoast.value);
+		}
+	})
+	return coffeeResult;
+}
 
 const renderCoffees = (coffees) => {
 	for(coffee of coffees) {
@@ -34,28 +51,18 @@ const renderCoffees = (coffees) => {
 		coffeeBody.appendChild(coffeeElement);
 	}
 };
-const filterCoffee = coffees => {
-	let coffeeResult = coffees;
-	let selectedRoast = document.querySelector(`#roast-selection`).value;
-	coffeeResult = coffeeResult.filter(coffee=>{
-		return coffee.roast.includes(selectedRoast)
-	})
-}
 
-const updateCoffees = () => {
-	filterCoffee(coffees);
-	renderCoffees(coffees);
-};
+const handleFilter = (coffees) => {
+	let coffeeBody = document.querySelector('#coffee-body');
+	let selectedRoast = document.querySelector(`#roast-selection`);
+	selectedRoast.addEventListener('change', e=> {
+		coffeeBody.innerHTML = "";
+		updateCoffees(coffees)
+	});
+}
 
 // IIFE
 (() => {
-	// const tbody = document.querySelector("#coffees");
-	// const submitButton = document.querySelector("#submit");
-	// const roastSelection = document.querySelector("#roast-selection");
-	// renderCoffees(coffees, tbody, roastSelection);
-updateCoffees();
-
-	// submitButton.addEventListener("click", (e) => {
-	// 	updateCoffees(e, tbody, roastSelection);
-	// });
+	updateCoffees(coffees);
+	handleFilter(coffees);
 })();
