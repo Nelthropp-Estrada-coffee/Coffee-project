@@ -88,7 +88,7 @@ const addCoffee = (coffees) => {
 	submitCoffee.addEventListener('click', e => {
 		e.preventDefault();
 		let coffeeItem = document.createElement('div');
-		coffeeItem.classList.add("d-flex", "flex-row", "col-12");
+		coffeeItem.classList.add("d-flex", "flex-row", "col-12", "coffee-item");
 		coffeeItem.innerHTML = `
    		<p class="col-6">${cName.value}</p>
 		<p class="col-6">${cRoast.value}</p>
