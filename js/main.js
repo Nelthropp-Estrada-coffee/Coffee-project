@@ -33,14 +33,14 @@ const createCoffeeElement = coffee => {
 
 const filterCoffee = coffees => {
 	let coffeeResult = coffees;
-	let selectedRoast = document.querySelector(`#roast-selection`);
+	const roastInput = document.querySelector('input[name=roast]:checked');
 	const searchInput = document.querySelector('#search');
 	const searchValue = searchInput.value;
 	coffeeResult = coffeeResult.filter(coffee=>{
-		if (selectedRoast.value === "all") {
-			return true;
+		if (roastInput.value === "all") {
+			return coffee;
 		} else {
-			return coffee.roast.toLowerCase().includes(selectedRoast.value.toLowerCase());
+			return coffee.roast.includes(roastInput.value);
 		}
 	});
 	coffeeResult = coffeeResult.filter(coffee=>{
@@ -63,12 +63,14 @@ const renderCoffees = (coffees) => {
 
 const handleFilter = (coffees) => {
 	let coffeeBody = document.querySelector('#coffee-body');
-	let selectedRoast = document.querySelector(`#roast-selection`);
+	let roastBtns = document.querySelectorAll(`input[name=roast]`);
 	const searchInput = document.querySelector('#search');
-	selectedRoast.addEventListener('change', e=> {
-		coffeeBody.innerHTML = "";
-		updateCoffees(coffees);
-	});
+	for (let roastBtn of roastBtns) {
+		roastBtn.addEventListener('click', e => {
+			coffeeBody.innerHTML = "";
+			updateCoffees(coffees);
+		});
+	}
 	searchInput.addEventListener('input', e=> {
 		coffeeBody.innerHTML = "";
 		updateCoffees(coffees);
