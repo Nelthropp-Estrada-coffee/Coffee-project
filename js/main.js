@@ -54,6 +54,8 @@ const filterCoffee = coffees => {
 }
 
 const renderCoffees = (coffees) => {
+	let coffeeBody = document.querySelector('#coffee-body');
+	coffeeBody.innerHTML = "";
 	for(coffee of coffees) {
 		const coffeeBody = document.querySelector('#coffee-body');
 		const coffeeElement = createCoffeeElement(coffee);
