@@ -11,6 +11,14 @@
     font-family: 'Agbalumo', serif;
 }
 
+#logo {
+    position: absolute;
+    width: 175px;
+    aspect-ratio: 902/973;
+    left: 10px;
+    top: 10px;
+}
+
 .coffee-form {
     background-color: #d2b48c;
     position: absolute;
