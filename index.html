@@ -10,17 +10,19 @@
     <nav class="container">
         <div class="row">
             <h1>Coffee!</h1>
-            <div class="col d-flex flex-row gap-2">
-                <input type="radio" class="btn-check" name="roast" value="all" autocomplete="off" id="all" checked>
-                <label class="btn btn-secondary" for="all">All</label>
-                <input type="radio" class="btn-check" name="roast" id="light" autocomplete="off" value="light">
-                <label class="btn btn-secondary" for="light">Light</label>
-                <input type="radio" class="btn-check" name="roast" id="medium" autocomplete="off" value="medium">
-                <label class="btn btn-secondary" for="medium">Medium</label>
-                <input type="radio" class="btn-check" name="roast" id="dark" autocomplete="off" value="dark">
-                <label class="btn btn-secondary" for="dark">Dark</label>
-                <button id="form-btn" class="col"><img id="cup" src="img/coffee-cup.png"></button>
-                <div class="input-group input-group-md col-3">
+            <div class="col d-flex flex-row gap-2 justify-content-center">
+                <div class="btn-group gap-2 align-items-center">
+                    <input type="radio" class="btn-check" name="roast" value="all" autocomplete="off" id="all" checked>
+                    <label class="btn btn-secondary" for="all">All</label>
+                    <input type="radio" class="btn-check" name="roast" id="light" autocomplete="off" value="light">
+                    <label class="btn btn-secondary" for="light">Light</label>
+                    <input type="radio" class="btn-check" name="roast" id="medium" autocomplete="off" value="medium">
+                    <label class="btn btn-secondary" for="medium">Medium</label>
+                    <input type="radio" class="btn-check" name="roast" id="dark" autocomplete="off" value="dark">
+                    <label class="btn btn-secondary" for="dark">Dark</label>
+                </div>
+                <button id="form-btn"><img id="cup" src="img/coffee-cup.png"></button>
+                <div>
                     <input id="search" type="search" placeholder="Search coffees...">
                 </div>
             </div>
