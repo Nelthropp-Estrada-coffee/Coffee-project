@@ -16,42 +16,41 @@ const coffees = [
 	{ id: 14, name: "French", roast: "dark" },
 ];
 
-const createCoffeeElement = (coffee) => {
-	let tr = document.createElement("tr");
-	tr.classList.add("coffee");
+const createCoffeeElement = coffee => {
+	let coffeeItem = document.createElement('div');
+	coffeeItem.classList.add("d-flex", "flex-row", "col-12");
 
-	tr.innerHTML = `
-        <td>${coffee.id}</td>
-        <td>${coffee.name}</td>
-        <td>${coffee.roast}</td>
+	coffeeItem.innerHTML = `
+   		<p class="col-6">${coffee.name}</p>
+		<p class="col-6">${coffee.roast}</p>
     `;
-	return tr;
+	return coffeeItem;
 };
 
-const renderCoffees = (coffees, target) => {
-	// Clear tbody before inserting new rows
-	target.innerHTML = "";
-	for (let i = coffees.length - 1; i >= 0; i--) {
-		const coffeeElement = createCoffeeElement(coffees[i]);
-		target.appendChild(coffeeElement);
+const renderCoffees = (coffees) => {
+	for(coffee of coffees) {
+		const coffeeBody = document.querySelector('#coffee-body');
+		const coffeeElement = createCoffeeElement(coffee);
+		coffeeBody.appendChild(coffeeElement);
 	}
 };
 
-const updateCoffees = (e, target, selection) => {
-	e.preventDefault();
-	const selectedRoast = selection.value;
-	const filteredCoffees = coffees.filter((coffee) => coffee.roast === selectedRoast);
-	renderCoffees(filteredCoffees, target);
-};
+// const updateCoffees = (e, target, selection) => {
+// 	e.preventDefault();
+// 	const selectedRoast = selection.value;
+// 	const filteredCoffees = coffees.filter((coffee) => coffee.roast === selectedRoast);
+// 	renderCoffees(filteredCoffees, target);
+// };
 
 // IIFE
 (() => {
-	const tbody = document.querySelector("#coffees");
-	const submitButton = document.querySelector("#submit");
-	const roastSelection = document.querySelector("#roast-selection");
-	renderCoffees(coffees, tbody, roastSelection);
+	// const tbody = document.querySelector("#coffees");
+	// const submitButton = document.querySelector("#submit");
+	// const roastSelection = document.querySelector("#roast-selection");
+	// renderCoffees(coffees, tbody, roastSelection);
+	renderCoffees(coffees);
 
-	submitButton.addEventListener("click", (e) => {
-		updateCoffees(e, tbody, roastSelection);
-	});
+	// submitButton.addEventListener("click", (e) => {
+	// 	updateCoffees(e, tbody, roastSelection);
+	// });
 })();
