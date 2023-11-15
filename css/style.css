@@ -32,9 +32,17 @@
     top: 10px;
 
 }
+
+.coffee-header {
+    padding: 0 25%;
+}
+
+header p {
+    font-size: 30px;
+}
 #coffee-body{
     min-height: 100dvh;
-    margin:0 20%;
+    padding: 0 25%;
 }
 .btn-secondary{
     background-color: chocolate;
