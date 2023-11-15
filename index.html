@@ -21,7 +21,7 @@
                 <div class="input-group input-group-md col-3">
                     <input id="search" type="search" placeholder="Search coffees...">
                 </div>
-                <button class="col-3">Add Coffee</button>
+                <button id="form-btn" class="col-3">Add Coffee</button>
             </div>
         </div>
     </nav>
@@ -38,12 +38,12 @@
     <form class="coffee-form">
         <div class="mb-3">
             <label for="coffeename-input" class="form-label">Coffee Name</label>
-            <input type="text" class="form-control" id="coffeename-input">
+            <input type="text" class="form-control" id="coffeename-input" placeholder="coffee name...">
         </div>
         <div class="mb-3">
             <label for="coffeeroast-input" class="form-label">Roast</label>
             <select id="coffeeroast-input">
-                <option value="light">light</option>
+                <option value="light" selected>light</option>
                 <option value="medium">medium</option>
                 <option value="dark">dark</option>
             </select>

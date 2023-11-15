@@ -12,4 +12,9 @@
     top: 25%;
     right: 25%;
     border: 1px solid black;
+    visibility: hidden;
+}
+
+.active {
+    visibility: visible;
 }

@@ -78,6 +78,7 @@ const handleFilter = (coffees) => {
 const addCoffee = (coffees) => {
 	const coffeeBody = document.querySelector('#coffee-body');
 	const submitCoffee = document.querySelector('.coffee-form button');
+	const formBody = document.querySelector('form.coffee-form');
 	const cName = document.querySelector('#coffeename-input');
 	const cRoast = document.querySelector('#coffeeroast-input');
 	submitCoffee.addEventListener('click', e => {
@@ -88,16 +89,26 @@ const addCoffee = (coffees) => {
    		<p class="col-6">${cName.value}</p>
 		<p class="col-6">${cRoast.value}</p>
     		`;
-		let cObject = {id: 16, name: cName.value, roast: cRoast.value};
+		let cObject = {id: coffees.length+1, name: cName.value, roast: cRoast.value};
 		coffees.push(cObject);
 		coffeeBody.appendChild(coffeeItem);
+		formBody.classList.remove('active');
 	});
 	updateCoffees(coffees);
+}
+
+const handleForm = () => {
+	const formBtn = document.querySelector('#form-btn');
+	const formBody = document.querySelector('form.coffee-form');
+	formBtn.addEventListener('click', e=> {
+		formBody.classList.toggle('active');
+	})
 }
 
 // IIFE
 (() => {
 	updateCoffees(coffees);
 	handleFilter(coffees);
+	handleForm();
 	addCoffee(coffees);
 })();
