@@ -15,7 +15,6 @@ const coffees = [
 	{ id: 13, name: "Italian", roast: "dark" },
 	{ id: 14, name: "French", roast: "dark" },
 ];
-
 const updateCoffees = (coffees) => {
 	let displayCoffee = filterCoffee(coffees);
 	renderCoffees(displayCoffee);
