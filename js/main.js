@@ -5,20 +5,20 @@ const genPrice = () => {
 }
 
 const coffees = [
-	{ id: 1, name: "Light City", roast: "light" , price: "" },
-	{ id: 2, name: "Half City", roast: "light" , price: ""},
-	{ id: 3, name: "Cinnamon", roast: "light" , price: ""},
-	{ id: 4, name: "City", roast: "medium", price: "" },
-	{ id: 5, name: "American", roast: "medium" , price: ""},
-	{ id: 6, name: "Breakfast", roast: "medium" , price: ""},
-	{ id: 7, name: "High", roast: "dark", price: "" },
-	{ id: 8, name: "Continental", roast: "dark" , price: "" },
-	{ id: 9, name: "New Orleans", roast: "dark", price: "" },
-	{ id: 10, name: "European", roast: "dark", price: "" },
-	{ id: 11, name: "Espresso", roast: "dark" , price: ""},
-	{ id: 12, name: "Viennese", roast: "dark" , price: ""},
-	{ id: 13, name: "Italian", roast: "dark", price: "" },
-	{ id: 14, name: "French", roast: "dark" , price: ""},
+	{ id: 1, name: "Opha Mae Johnson", roast: "light" , price: "" },
+	{ id: 2, name: "Tun tavern Esprsso", roast: "light" , price: ""},
+	{ id: 3, name: "MRE coffee", roast: "light" , price: ""},
+	{ id: 4, name: "Termmal Lance", roast: "medium", price: "" },
+	{ id: 5, name: "Carlos Hathcock", roast: "medium" , price: ""},
+	{ id: 6, name: "Paris Island", roast: "medium" , price: ""},
+	{ id: 7, name: "EGA", roast: "dark", price: "" },
+	{ id: 8, name: "ASVAB Waiver", roast: "dark" , price: "" },
+	{ id: 9, name: "Smedley Butler", roast: "dark", price: "" },
+	{ id: 10, name: "Dan Daly", roast: "dark", price: "" },
+	{ id: 11, name: "John Basilone", roast: "dark" , price: ""},
+	{ id: 12, name: "Crayon flavor", roast: "dark" , price: ""},
+	{ id: 13, name: "Commandants Fav", roast: "dark", price: "" },
+	{ id: 14, name: "Original 1775", roast: "dark" , price: ""},
 ];
 
 const debounce = (fn, delay) => {
