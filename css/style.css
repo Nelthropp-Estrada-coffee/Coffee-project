@@ -94,7 +94,7 @@ header p {
 }
 
 #form-btn {
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 60px;
     background-color: transparent;
