@@ -32,8 +32,8 @@
     margin-right: -150px;
     border: 5px solid chocolate;
     visibility: hidden;
-    min-height: 300px;
-    min-width: 300px;
+    min-height: 400px;
+    min-width: 400px;
     border-radius: 15px;
     text-align: center;
 }
