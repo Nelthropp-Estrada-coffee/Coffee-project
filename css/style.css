@@ -37,13 +37,26 @@
 }
 
 .coffee-item {
+    height: 36px;
     font-size: 24px;
+    transition: all 0.5s ease-out;
+    border-radius: 5px;
+}
+
+.coffee-item:hover {
+    height: 72px;
+    font-size: 40px;
+}
+
+.spin {
+    visibility: hidden;
 }
 
 .active {
     visibility: visible;
 }
-#search{
+
+#search-bar{
     position: fixed;
     right: 20px;
     top: 10px;

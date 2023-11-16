@@ -15,6 +15,19 @@ const coffees = [
 	{ id: 13, name: "Italian", roast: "dark" },
 	{ id: 14, name: "French", roast: "dark" },
 ];
+
+const debounce = (fn, delay) => {
+	let timeoutId;
+	return (...args) => {
+		if (timeoutId) {
+			clearTimeout(timeoutId);
+		}
+		timeoutId = setTimeout(() => {
+			fn(...args);
+		}, delay);
+	};
+};
+
 const updateCoffees = (coffees) => {
 	let displayCoffee = filterCoffee(coffees);
 	renderCoffees(displayCoffee);
@@ -72,9 +85,17 @@ const handleFilter = (coffees) => {
 			updateCoffees(coffees);
 		});
 	}
-	searchInput.addEventListener('input', e=> {
-		coffeeBody.innerHTML = "";
+	searchInput.addEventListener('input', debounce((e) => {
+		if (searchInput.value.toLowerCase() === "the") {
+			return;
+		}
 		updateCoffees(coffees);
+	}, 1000));
+	searchInput.addEventListener('input', e => {
+		document.querySelector('#spin').classList.add('active');
+		setTimeout(()=> {
+			document.querySelector('#spin').classList.remove('active');
+		},1000);
 	});
 }
 const addCoffee = (coffees) => {
