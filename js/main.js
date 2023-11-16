@@ -1,19 +1,24 @@
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+const genPrice = () => {
+	randomPrice = Math.floor(Math.random() * (50 - 1 + 1) + 1);
+	return randomPrice;
+}
+
 const coffees = [
-	{ id: 1, name: "Light City", roast: "light" , price: "$5.00" },
-	{ id: 2, name: "Half City", roast: "light" , price: "$12.00"},
-	{ id: 3, name: "Cinnamon", roast: "light" , price: "$4.00"},
-	{ id: 4, name: "City", roast: "medium", price: "$54.00" },
-	{ id: 5, name: "American", roast: "medium" , price: "$6.00"},
-	{ id: 6, name: "Breakfast", roast: "medium" , price: "$100.00"},
-	{ id: 7, name: "High", roast: "dark", price: "$87.00" },
-	{ id: 8, name: "Continental", roast: "dark" , price: "$90.00" },
-	{ id: 9, name: "New Orleans", roast: "dark", price: "$14.00" },
-	{ id: 10, name: "European", roast: "dark", price: "$55.00" },
-	{ id: 11, name: "Espresso", roast: "dark" , price: "$156.00"},
-	{ id: 12, name: "Viennese", roast: "dark" , price: "$309.00"},
-	{ id: 13, name: "Italian", roast: "dark", price: "$3.00" },
-	{ id: 14, name: "French", roast: "dark" , price: "$5.00"},
+	{ id: 1, name: "Light City", roast: "light" , price: "" },
+	{ id: 2, name: "Half City", roast: "light" , price: ""},
+	{ id: 3, name: "Cinnamon", roast: "light" , price: ""},
+	{ id: 4, name: "City", roast: "medium", price: "" },
+	{ id: 5, name: "American", roast: "medium" , price: ""},
+	{ id: 6, name: "Breakfast", roast: "medium" , price: ""},
+	{ id: 7, name: "High", roast: "dark", price: "" },
+	{ id: 8, name: "Continental", roast: "dark" , price: "" },
+	{ id: 9, name: "New Orleans", roast: "dark", price: "" },
+	{ id: 10, name: "European", roast: "dark", price: "" },
+	{ id: 11, name: "Espresso", roast: "dark" , price: ""},
+	{ id: 12, name: "Viennese", roast: "dark" , price: ""},
+	{ id: 13, name: "Italian", roast: "dark", price: "" },
+	{ id: 14, name: "French", roast: "dark" , price: ""},
 ];
 
 const debounce = (fn, delay) => {
@@ -36,6 +41,7 @@ const updateCoffees = (coffees) => {
 const createCoffeeElement = coffee => {
 	let coffeeItem = document.createElement('div');
 	coffeeItem.classList.add("d-flex", "flex-row", "col-12", "coffee-item");
+	coffee.price = (genPrice()).toLocaleString("en-US", {style: "currency", currency: "USD"});
 	coffeeItem.innerHTML = `
    		<p class="col-6">${coffee.name}</p>
 		<p class="col-6">${coffee.roast}</p>
