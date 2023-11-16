@@ -35,12 +35,14 @@
             <header class="coffee-header col d-flex justify-content-between align-items-center">
                     <p class="col-6">Name</p>
                     <p class="col-6">Roast</p>
+                    <p class="col-3">Price</p>
             </header>
             <div id="coffee-body" class="col d-flex align-items-center flex-column">
             </div>
         </div>
     </main>
     <form class="coffee-form">
+
         <div class="mb-3">
             <label for="coffeename-input" class="form-label">Coffee Name</label>
             <input type="text" class="form-control" id="coffeename-input" placeholder="coffee name...">
@@ -52,6 +54,10 @@
                 <option value="medium">medium</option>
                 <option value="dark">dark</option>
             </select>
+        </div>
+        <div class="mb-3">
+            <label for="coffeePrice-input" class="form-label">Coffee Price</label>
+            <input type="text" class="form-control" id="coffeePrice-input" placeholder="coffee price...">
         </div>
         <button type="submit" class="btn btn-primary">Add Coffee</button>
     </form>
