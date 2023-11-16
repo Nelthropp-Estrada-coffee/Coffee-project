@@ -27,10 +27,11 @@
     background-color: #d2b48c;
     position: absolute;
     top: 30%;
-    right: 30%;
+    right: 20%;
     border: 5px solid chocolate;
     visibility: hidden;
     min-height: 300px;
+    min-width: 300px;
     border-radius: 15px;
     text-align: center;
 }
@@ -84,5 +85,6 @@ h1 {
     transform: scale(1.2);
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
+
 
 
