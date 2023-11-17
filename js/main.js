@@ -1,9 +1,8 @@
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+
 const genPrice = () => {
 	randomPrice = Math.floor(Math.random() * (50 - 1 + 1) + 1);
 	return randomPrice;
 }
-
 const coffees = [
 	{ id: 1, name: "Opha Mae Johnson", roast: "light" , price: "" },
 	{ id: 2, name: "Tun tavern Esprsso", roast: "light" , price: ""},
@@ -71,7 +70,6 @@ const filterCoffee = coffees => {
 	coffeeResult.sort((a, b) => a.id - b.id);
 	return coffeeResult;
 }
-
 const renderCoffees = (coffees) => {
 	let coffeeBody = document.querySelector('#coffee-body');
 	coffeeBody.innerHTML = "";
@@ -130,7 +128,6 @@ const addCoffee = (coffees) => {
 	});
 	updateCoffees(coffees);
 }
-
 const handleForm = () => {
 	const formBtn = document.querySelector('#form-btn');
 	const formBody = document.querySelector('form.coffee-form');
@@ -138,8 +135,6 @@ const handleForm = () => {
 		formBody.classList.toggle('active');
 	})
 }
-
-// IIFE
 (() => {
 	updateCoffees(coffees);
 	handleFilter(coffees);
